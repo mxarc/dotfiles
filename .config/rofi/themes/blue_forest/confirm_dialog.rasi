@@ -1,0 +1,24 @@
+/* Confirm Dialog */
+
+@import "~/.config/rofi/themes/blue_forest/theme.rasi"
+
+* {
+    background-color:       @background;
+    text-color:             @foreground;
+    font:                   "Terminus 9";
+}
+
+window {
+    width:                  210px;
+    padding:                25px;
+    border:                 0px 0px 1px 0px;
+    border-radius:          0px;
+    border-color:           @border-color;
+    location:               center;
+    y-offset:               -2em;
+}
+
+entry {
+    expand:                 true;
+    text-color:             @foreground;
+}

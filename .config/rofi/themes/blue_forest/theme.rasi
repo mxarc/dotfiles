@@ -1,0 +1,34 @@
+/*******************************************************
+ * Blue forest colors for Rofi
+ * Maintainer: @mxarc
+ *******************************************************/
+* {
+    active-background: #617784;
+    active-foreground: @foreground;
+    normal-background: @itemBackground;
+    normal-foreground: @foreground;
+    urgent-background: #B68D74;
+    urgent-foreground: @foreground;
+
+    alternate-active-background: @itemBackground;
+    alternate-active-foreground: @foreground;
+    alternate-normal-background: @itemBackground;
+    alternate-normal-foreground: @foreground;
+    alternate-urgent-background: @itemBackground;
+    alternate-urgent-foreground: @foreground;
+
+    selected-active-background: #B68D74;
+    selected-active-foreground: @foreground;
+    selected-normal-background: #617784;
+    selected-normal-foreground: @foreground;
+    selected-urgent-background: #329993;
+    selected-urgent-foreground: @foreground;
+    separatorcolor: rgba ( 0, 0, 0, 0 % );
+    background-color: @itemBackground;
+    background: rgba(11, 21, 27, 60%);
+    itemBackground: rgba(11, 21, 27, 0%);
+    foreground: #decec8;
+    border-color: @background;
+    spacing: 2;
+    item-background: rgba(11, 21, 27, 60%);
+}
