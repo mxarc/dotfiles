@@ -2,7 +2,7 @@
 
 # Enable shortcuts
 pgrep -x sxhkd >/dev/null || sxhkd &
-# Load xrandr config
+# Monitor
 ~/.screenlayout/monitor.sh &
 # Bar
 ~/.config/polybar/launch.sh &

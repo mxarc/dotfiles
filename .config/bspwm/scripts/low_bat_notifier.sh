@@ -3,7 +3,7 @@
 ### VARIABLES
 
 POLL_INTERVAL=120    # seconds at which to check battery level
-LOW_BAT=33           # lesser than this is considered low battery
+LOW_BAT=40           # lesser than this is considered low battery
 
 # If BAT0 doesn't work for you, check available devices with command below
 #

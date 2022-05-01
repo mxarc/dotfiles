@@ -36,14 +36,16 @@ bspc rule -a TelegramDesktop state=floating floating=on
 bspc rule -a whatsapp-nativefier-d40211 state=floating floating=on
 # launch sticky notes in floating mode
 bspc rule -a MyNotes state=floating floating=on
+# launch feh in floating mode
+bspc rule -a feh state=floating floating=on
 
 ######################
 ### BSPWM coloring ###
 ######################
 bspc config presel_feedback_color "#689992"
 bspc config normal_border_color "#575268"
-bspc config active_border_color "#F5E0DC"
+bspc config active_border_color "#decec8"
 bspc config border_width 1
 
-# autostart
-bash $HOME/.config/bspwm/scripts/autostart.sh
+# autostart scripts
+$HOME/.config/bspwm/scripts/autostart.sh
