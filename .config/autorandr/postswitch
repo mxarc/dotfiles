@@ -1,2 +1,4 @@
-#! /bin/sh
-#bspc wm -r && notify-send -i display "Display profile" "$AUTORANDR_CURRENT_PROFILE"
+#!/usr/bin/env bash
+
+# reload bspwm and send notification
+bspc wm -r && notify-send -t 2000 "Screen" "Switched to $AUTORANDR_CURRENT_PROFILE profile"

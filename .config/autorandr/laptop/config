@@ -12,7 +12,8 @@ output eDP1
 crtc 0
 mode 2736x1824
 pos 0x0
-rate 60
+primary
+rate 60.01
 x-prop-broadcast_rgb Automatic
 x-prop-colorspace Default
 x-prop-max_bpc 12

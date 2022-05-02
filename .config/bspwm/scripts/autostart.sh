@@ -3,7 +3,7 @@
 # Enable shortcuts
 pgrep -x sxhkd >/dev/null || sxhkd &
 # Monitor
-~/.screenlayout/monitor.sh &
+#~/.screenlayout/monitor.sh &
 # Bar
 ~/.config/polybar/launch.sh &
 # Notifications
