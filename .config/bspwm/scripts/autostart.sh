@@ -3,7 +3,7 @@
 # Enable shortcuts
 pgrep -x sxhkd >/dev/null || sxhkd &
 # Monitor
-#~/.screenlayout/monitor.sh &
+#~/.screenlayout/monitor.sh & # disabled due to autorandr taking care
 # Bar
 ~/.config/polybar/launch.sh &
 # Notifications
