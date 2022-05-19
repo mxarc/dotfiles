@@ -21,5 +21,6 @@ Software used:
 - dunst for notifications
 - sxhkd
 - alacritty
+- maim for screenshots
 
 No install script yet

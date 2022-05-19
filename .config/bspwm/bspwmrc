@@ -5,9 +5,9 @@
 ###########################
 
 if xrandr -q | grep 'HDMI1 connected'; then
-  bspc monitor HDMI1 -d 1 2 3 4 5
+  bspc monitor HDMI1 -d 1 2 3 4 5 6 
 else
-  bspc monitor eDP1 -d 1 2 3 4 5
+  bspc monitor eDP1 -d 1 2 3 4 5 6 
 fi
 
 bspc config remove_disabled_monitors true
@@ -34,8 +34,8 @@ bspc rule -a Screenkey manage=off
 bspc rule -a TelegramDesktop state=floating floating=on
 # launch whatsapp nativifier in floating mode
 bspc rule -a whatsapp-nativefier-d40211 state=floating floating=on
-# launch sticky notes in floating mode
-bspc rule -a MyNotes state=floating floating=on
+# launch network manager applet in floating mode
+bspc rule -a Nm-connection-editor state=floating floating=on
 # launch feh in floating mode
 bspc rule -a feh state=floating floating=on
 

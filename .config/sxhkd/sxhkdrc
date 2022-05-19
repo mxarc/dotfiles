@@ -6,6 +6,10 @@
 super + Return
   alacritty
 
+# terminal emulator with tmux
+super + shift + Return
+  alacritty -e tmux
+
 # program launcher
 super + d
   ~/.config/rofi/menus/appmenu.sh
@@ -169,7 +173,7 @@ XF86MonBrightnessDown
 
 # take screenshot
 Print
-  scrot -q 100 ~/Pictures/ss-$(date +%F_%T).png && notify-send "Screenshot saved as ss-$(date +%F_%T).png" -i /usr/share/icons/Papirus-Dark/24x24/actions/stock_fullscreen.svg
+  ~/Code/dotfiles/scripts/screenshot.sh -c
 
 # open screenshot menus
 super + Print
