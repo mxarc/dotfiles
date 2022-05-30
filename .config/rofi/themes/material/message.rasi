@@ -1,0 +1,20 @@
+@import "./theme.rasi"
+
+configuration {
+    font: "Terminus 12";
+    show-icons: false;
+}
+
+* {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+window {
+    width: 300px;
+    padding: 10;
+}
+
+error-message {
+    padding: 1em;
+}

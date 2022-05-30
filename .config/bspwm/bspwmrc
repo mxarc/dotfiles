@@ -5,9 +5,9 @@
 ###########################
 
 if xrandr -q | grep 'HDMI1 connected'; then
-  bspc monitor HDMI1 -d 1 2 3 4 5
+  bspc monitor HDMI1 -d 1 2 3 4 5 6
 else
-  bspc monitor eDP1 -d 1 2 3 4 5
+  bspc monitor eDP1 -d 1 2 3 4 5 6
 fi
 
 bspc config remove_disabled_monitors true
@@ -50,4 +50,28 @@ bspc config active_border_color "#decec8"
 bspc config border_width 1
 
 # autostart scripts
-$HOME/.config/bspwm/scripts/autostart.sh
+
+# Enable shortcuts
+pgrep -x sxhkd >/dev/null || sxhkd &
+# Monitor
+#~/.screenlayout/monitor.sh & # disabled due to autorandr taking care
+# Bar
+~/.config/polybar/launch.sh &
+# Notifications
+/usr/bin/dunst &
+# Polkit
+if [[ ! $(pidof polkit-gnome-authentication-agent-1) ]]; then
+  /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+fi
+# Wallpaper
+nitrogen --restore &
+# Dex
+dex -a -s /etc/xdg/autostart/:~/.config/autostart/
+# Picom
+picom --experimental-backend -b &
+# Network Applet
+nm-applet --indicator &
+# Cursor
+xsetroot -cursor_name left_ptr &
+# Low battery notifier
+~/Code/dotfiles/scripts/low_bat_notifier.sh &

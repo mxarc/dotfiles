@@ -1,3 +1,5 @@
+output eDP1
+off
 output DP1
 off
 output DP2
@@ -5,8 +7,6 @@ off
 output HDMI2
 off
 output VIRTUAL1
-off
-output eDP1
 off
 output HDMI1
 crtc 0

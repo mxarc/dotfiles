@@ -1,0 +1,43 @@
+@import "./theme.rasi"
+
+configuration {
+    font: "Terminus 12";
+    show-icons: false;
+}
+
+prompt {
+    enabled: true;
+}
+
+entry {
+    enabled: false;
+}
+
+window {
+    padding: 10;
+    width: 300px;
+    border-radius: 0px;
+}
+
+listview {
+    lines: 6;
+    columns: 1;
+    scrollbar: false;
+}
+
+scrollbar {
+    width: 4px ;
+    border: 0;
+    handle-color: @fg;
+    handle-width: 8px ;
+}
+
+element selected {
+    border-radius: 0px;
+}
+
+element {
+    text-color: @fg;
+    border-radius: 0%;
+    padding: 0% 0% 1% 0%;
+}

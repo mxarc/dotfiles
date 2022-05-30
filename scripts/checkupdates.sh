@@ -18,7 +18,7 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-declare -r myname='checkupdates'
+declare -r myname='checkupdates.sh'
 declare -r myver='1.0.0'
 
 plain() {

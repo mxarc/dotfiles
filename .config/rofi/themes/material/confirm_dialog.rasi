@@ -1,0 +1,27 @@
+@import "./theme.rasi"
+
+configuration {
+    font: "Terminus 12";
+    show-icons: false;
+}
+
+prompt {
+    enabled: true;
+    text-color: @fg;
+}
+
+entry {
+    enabled: true;
+    placeholder: "Y/N";
+    text-color: @ac;
+}
+
+window {
+    padding: 10;
+    width: 300px;
+    border-radius: 0px;
+}
+
+inputbar {
+    background-color:               @al;
+}
