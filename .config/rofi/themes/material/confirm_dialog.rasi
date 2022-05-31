@@ -7,13 +7,13 @@ configuration {
 
 prompt {
     enabled: true;
-    text-color: @fg;
+    text-color: @foreground;
 }
 
 entry {
     enabled: true;
     placeholder: "Y/N";
-    text-color: @ac;
+    text-color: @foreground;
 }
 
 window {
@@ -23,5 +23,5 @@ window {
 }
 
 inputbar {
-    background-color:               @al;
+    background-color: @altbackground;
 }

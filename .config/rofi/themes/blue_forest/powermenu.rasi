@@ -82,7 +82,7 @@ scrollbar {
 }
 mode-switcher {
     border:       2px 0px 0px ;
-    border-color: @separatorcolor;
+    border-color: @selectedcolor;
 }
 button {
     spacing:    0;
