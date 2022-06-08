@@ -1,6 +1,6 @@
 # dotfiles
 
-![Screnshoot](ss.png)
+![Screnshoot](screen.png)
 
 Here are my dotfiles, for usage in my personal machine
 
