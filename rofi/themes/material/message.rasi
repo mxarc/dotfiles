@@ -5,16 +5,7 @@ configuration {
     show-icons: false;
 }
 
-* {
-    background-color: transparent;
-    text-color: @foreground;
-}
-
 window {
     width: 300px;
     padding: 10;
-}
-
-error-message {
-    padding: 1em;
 }
