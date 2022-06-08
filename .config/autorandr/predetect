@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-# from autorandr doc:
-
-# If you experience issues with xrandr being executed too early after connecting a new monitor,
-# then you can use a predetect script to delay the execution.
-# Write e.g. sleep 1 into that file to make autorandr wait a second before running xrandr.
-
-sleep 1

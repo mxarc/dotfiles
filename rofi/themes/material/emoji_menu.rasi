@@ -1,0 +1,25 @@
+@import "./theme.rasi"
+
+
+element-icon {
+    enabled: false;
+}
+
+listview {
+    background-color: @altbackground;
+    padding: 10px;
+    columns: 5;
+    lines: 8;
+    spacing: 0%;
+    cycle: false;
+    dynamic: true;
+    layout: vertical;
+}
+
+element {
+    padding: 1.2% 0% 2% 0%;
+    background-color: @altbackground;
+    text-color: @foreground;
+    orientation: vertical;
+    border-radius: 0%;
+}

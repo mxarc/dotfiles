@@ -1,4 +1,4 @@
-#
+@#
 # wm independent hotkeys
 #
 
@@ -12,27 +12,31 @@ super + shift + Return
 
 # program launcher
 super + d
-  ~/.config/rofi/menus/appmenu.sh
+  $HOME/.config/rofi/menus/appmenu.sh
 
 # show open window
 super + ctrl + d
-  ~/.config/rofi/menus/open_windows.sh
+  $HOME/.config/rofi/menus/open_windows.sh
 
 # show ssh sesssions
 super + shift + d
-  ~/.config/rofi/menus/show_ssh_sessions.sh
+  $HOME/.config/rofi/menus/show_ssh_sessions.sh
 
 # power-menu
 super + shift + e
-  ~/.config/rofi/menus/powermenu.sh
+  $HOME/.config/rofi/menus/powermenu.sh
+
+# monitor screen layout
+super + shift + p
+  $HOME/.config/rofi/menus/monitor_layouts.sh
 
 # le emoji menu
 super + period
-  ~/.config/rofi/menus/emojis.sh
+  $HOME/.config/rofi/menus/emojis.sh
 
 # shortcuts
 #super + shift + F1
-#  ~/.config/rofi/menus/shortcuts.sh
+#  $HOME/.config/rofi/menus/shortcuts.sh
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -45,7 +49,7 @@ super + Escape
 # quit/restart bspwm
 super + alt + {q,r}
   bspc {quit,wm -r}
-
+  
 # close and kill
 super + {_,shift + }q
   bspc node -{c,k}
@@ -105,8 +109,8 @@ super + {o,i}
   bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-  bspc {desktop -f,node -d} '^{1-9,10}'
+super + {_,shift + } {1,2,3} ; {1-9,0}
+  notify-send "changing desktop"; bspc {desktop -f, node -d} "^{1,2,3}:^{1-9,10}"
 
 #
 # preselect
@@ -173,11 +177,11 @@ XF86MonBrightnessDown
 
 # take screenshot
 Print
-  ~/Code/dotfiles/scripts/screenshot.sh -c
+  $HOME/Code/dotfiles/scripts/screenshot.sh -c
 
 # open screenshot menus
 super + Print
-  ~/.config/rofi/menus/screenshot.sh
+  $HOME/.config/rofi/menus/screenshot.sh
 
 #
 # shortcuts

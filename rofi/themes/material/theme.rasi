@@ -1,10 +1,6 @@
 /*
- *
- * Author  : Aditya Shakya
- * Mail    : adi1090x@gmail.com
- * Github  : @adi1090x
- * Twitter : @adi1090x
- *
+ * Material theme
+ * Original author  : @adi1090x
  */
 
 /* * {
@@ -13,7 +9,7 @@
   se:  #504332;
   fg:  #decec8;
   ac:  #a69b97;
-
+https://gitlab.com/vahnrr/rofi-menus/-/tree/master/
 R:  34, G:  95, B:  87 | Hex: #225F57
 R:  13, G:  54, B:  55 | Hex: #0D3637
 R:   6, G:  43, B:  52 | Hex: #062B34
@@ -122,7 +118,7 @@ element {
 }
 
 element-icon {
-    background-color: inherit;
+    background-color: @altbackground;
     text-color: inherit;
     horizontal-align: 0.5;
     vertical-align: 0.5;
