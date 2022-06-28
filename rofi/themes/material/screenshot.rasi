@@ -2,8 +2,6 @@
 
 configuration {
     show-icons: false;
-    display-drun: "Layout";
-    drun-display-format: "{name}";
     disable-history: false;
     click-to-exit: true;
     location: 4;
@@ -21,9 +19,9 @@ window {
 listview {
     background-color: @background;
     columns: 1;
-    lines: 5;
+    lines: 6;
     spacing: 10px;
-    cycle: true;
+    cycle: false;
     dynamic: true;
     layout: vertical;
 }

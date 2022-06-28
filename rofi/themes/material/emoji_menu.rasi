@@ -1,5 +1,48 @@
 @import "./theme.rasi"
 
+window {
+    transparency: "real";
+    background-color: @blurBackground;
+    text-color: @foreground;
+    border-radius: 8px;
+    width: 55%;
+    location: center;
+    x-offset: 0;
+    y-offset: 0;
+}
+
+mainbox {
+    background-color: @background;
+    children: [ inputbar, listview ];
+    spacing: 15px;
+    padding: 15px;
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    background-color: @accent;
+    text-color: @background;
+    expand: false;
+}
+
+prompt {
+    enabled: true;
+    padding: 10px;
+    background-color: @altbackground;
+    text-color: @foreground;
+    font: "Terminus 12";
+}
+
+entry {
+    background-color: @altbackground;
+    text-color: @foreground;
+    placeholder-color: @foreground;
+    expand: true;
+    placeholder: "Search";
+    padding: 10px;
+    blink: true;
+    font: "Terminus 12";
+}
 
 element-icon {
     enabled: false;
@@ -9,17 +52,27 @@ listview {
     background-color: @altbackground;
     padding: 10px;
     columns: 5;
-    lines: 8;
+    lines: 6;
     spacing: 0%;
-    cycle: false;
+    cycle: true;
     dynamic: true;
     layout: vertical;
 }
 
 element {
-    padding: 1.2% 0% 2% 0%;
+    padding: 20;
     background-color: @altbackground;
     text-color: @foreground;
     orientation: vertical;
     border-radius: 0%;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+    font: "Terminus 10";
+    expand: true;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    margin: 0px;
 }

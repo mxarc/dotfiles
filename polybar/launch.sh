@@ -14,7 +14,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # check if eDP1, DP-1 and DP-2 are connected
 
 #polybar -q laptop_screen -c $DIR/config.ini &
-screen=$(cat $HOME/.screenLayout)
+screen=$(cat $HOME/.current-layout)
 
 if [ "$screen" == "docked-1" ]; then
   polybar -q main_screen -c $DIR/config.ini &
@@ -24,6 +24,9 @@ elif [ "$screen" == "docked-2" ]; then
 elif [ "$screen" == "docked-3" ]; then
   polybar -q main_screen -c $DIR/config.ini &
   polybar -q second_screen -c $DIR/config.ini &
+  polybar -q laptop_screen -c $DIR/config.ini &
+elif [ "$screen" == "docked-4" ]; then
+  polybar -q main_screen -c $DIR/config.ini &
   polybar -q laptop_screen -c $DIR/config.ini &
 else
   polybar -q laptop_single -c $DIR/config.ini &

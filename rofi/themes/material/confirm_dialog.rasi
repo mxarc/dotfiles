@@ -18,10 +18,11 @@ entry {
 
 window {
     padding: 10;
-    width: 300px;
+    width: 360px;
     border-radius: 0px;
+    background-color: @background;
 }
 
 inputbar {
-    background-color: @altbackground;
+    background-color: @background;
 }

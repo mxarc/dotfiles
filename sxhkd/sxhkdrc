@@ -24,7 +24,7 @@ super + shift + d
 
 # power-menu
 super + shift + e
-  $HOME/.config/rofi/menus/powermenu.sh
+  $HOME/.config/rofi/menus/power_menu.sh
 
 # monitor screen layout
 super + shift + p
@@ -110,7 +110,7 @@ super + {o,i}
 
 # focus or send to the given desktop
 super + {_,shift + } {1,2,3} ; {1-9,0}
-  notify-send "changing desktop"; bspc {desktop -f, node -d} "^{1,2,3}:^{1-9,10}"
+  bspc {desktop -f, node -d} "^{1,2,3}:^{1-9,10}"
 
 #
 # preselect
@@ -177,7 +177,7 @@ XF86MonBrightnessDown
 
 # take screenshot
 Print
-  $HOME/Code/dotfiles/scripts/screenshot.sh -c
+  $HOME/Code/dotfiles/scripts/screenshot.sh --clipboard
 
 # open screenshot menus
 super + Print

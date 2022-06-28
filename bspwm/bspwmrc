@@ -4,11 +4,11 @@
 ### BSPWM configuration ###
 ###########################
 
-# check that both DP-1-4, DP-1-53 and eDP-1 are connected
+# check that both DP-1-4, DP-1-3 and eDP-1 are connected
 # if profile is docked setting, enable docked mode
-SCREEN_CURRENT_PROFILE=$(cat $HOME/.screenLayout)
+SCREEN_CURRENT_PROFILE=$(cat $HOME/.current-layout)
 
-# launch bspwm manager notification with icon
+# launch bspwm manager notification
 notify-send "BSPWM" "Switched to $SCREEN_CURRENT_PROFILE profile"
 
 if [ "$SCREEN_CURRENT_PROFILE" == "docked-1" ]; then
@@ -19,6 +19,9 @@ elif [ "$SCREEN_CURRENT_PROFILE" == "docked-2" ]; then
 elif [ "$SCREEN_CURRENT_PROFILE" == "docked-3" ]; then
     bspc monitor DP-1-4 -d 1 2 3 4 5
     bspc monitor DP-1-3 -d 1 2 3 4 5
+    bspc monitor eDP-1 -d 1 2 3 4 5
+elif [ "$SCREEN_CURRENT_PROFILE" == "docked-4" ]; then
+    bspc monitor DP-1-4 -d 1 2 3 4 5
     bspc monitor eDP-1 -d 1 2 3 4 5
 else
   bspc monitor eDP-1 -d 1 2 3 4 5
@@ -53,6 +56,8 @@ bspc rule -a Nm-connection-editor state=floating floating=on
 bspc rule -a feh state=floating floating=on
 # launch sound settings in floating mode
 bspc rule -a Pavucontrol state=floating floating=on
+# screenshot preview in floating mode
+bspc rule -a Viewnior state=floating floating=on
 
 ######################
 ### BSPWM coloring ###
@@ -67,26 +72,34 @@ bspc config border_width 1
 # Enable shortcuts
 pgrep -x sxhkd >/dev/null || sxhkd &
 # Monitor
-#~/.screenlayout/monitor.sh & # disabled due to autorandr taking care
+#~/.screenlayout/monitor.sh & # disabled due to above script taking care
 # Bar
 $HOME/.config/polybar/launch.sh &
 # Notifications
-/usr/bin/dunst &
+if [[ ! $(pidof dunst) ]]; then
+  /usr/bin/dunst &
+fi
 # Polkit
 if [[ ! $(pidof polkit-gnome-authentication-agent-1) ]]; then
   /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 fi
-# Wallpaper
-nitrogen --restore &
-# Dex
+# Wallpaper, doesn't matter if already running, refresh will be called, output error messages to dev/null
+nitrogen --restore &> /dev/null &
+# Dex (auto start programs)
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/
-# Picom
+# Picom compositor
+if [[ ! $(pidof picom) ]]; then
 picom --experimental-backend -b &
+fi
 # Network Applet
-nm-applet --indicator &
+if [[ ! $(pidof nm-applet) ]]; then
+  nm-applet --indicator &
+fi
 # Cursor
 xsetroot -cursor_name left_ptr &
 # Automount devices
-udiskie --tray &
+if [[ ! $(pidof udisksd) ]]; then
+  udiskie --tray &
+fi
 # Low battery notifier
 $HOME/Code/dotfiles/scripts/low_bat_notifier.sh &

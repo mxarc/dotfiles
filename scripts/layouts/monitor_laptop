@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+echo "docked-4" > $HOME/.current-layout
+xrandr --output eDP-1 --mode 1920x1080 --pos 176x1745 --rotate normal --output VGA-1 --off --output DP-1 --off --output HDMI-1 --off --output DP-1-2 --off --output DP-1-4 --primary --mode 1920x1080 --pos 2096x1745 --rotate normal &&\
+$HOME/Code/dotfiles/scripts/layouts/postswitch

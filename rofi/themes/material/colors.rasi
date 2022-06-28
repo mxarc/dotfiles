@@ -1,0 +1,32 @@
+/* * {
+  al:  #00000000;
+  @background:  #00000080;
+  se:  #504332;
+  fg:  #decec8;
+  ac:  #a69b97;
+https://gitlab.com/vahnrr/rofi-menus/-/tree/master/
+R:  34, G:  95, B:  87 | Hex: #225F57
+R:  13, G:  54, B:  55 | Hex: #0D3637
+R:   6, G:  43, B:  52 | Hex: #062B34
+R:  57, G: 123, B: 113 | Hex: #397B71
+R:  35, G:  54, B:  58 | Hex: #23363A
+R:   3, G:  34, B:  39 | Hex: #032227
+
+R:  22, G:  22, B:  30 | Hex: #16161E
+R:  24, G:  32, B:  35 | Hex: #182023
+R:  26, G:  27, B:  38 | Hex: #1A1B26
+
+
+} */
+
+* {
+    altbackground:  #00000000;
+    background:  #16161E;
+    blurBackground:  #00000080;
+    selected:  #2a3032;
+    selectedForeground: #DECEC8;
+    foreground:  #DECEC8;
+    accent:  #16161E;
+    background-color: transparent;
+    text-color: @foreground;
+}

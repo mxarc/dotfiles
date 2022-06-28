@@ -2,7 +2,7 @@
 
 configuration {
     show-icons: false;
-    display-drun: "Layout";
+    display-drun: "Power";
     drun-display-format: "{name}";
     disable-history: false;
     click-to-exit: true;
@@ -13,7 +13,7 @@ window {
     transparency: "real";
     text-color: @foreground;
     border-radius: 8px;
-    width: 100px;
+    width: 80px;
     x-offset: -30px;
     y-offset: 0px;
 }
