@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+
+###########################
+### BSPWM configuration ###
+###########################
+
+# check that both DP-1-4, DP-1-3 and eDP-1 are connected
+# if profile is docked setting, enable docked mode
+SCREEN_CURRENT_PROFILE=$(cat $HOME/.current-layout)
+
+# launch bspwm manager notification
+notify-send "BSPWM" "Switched to $SCREEN_CURRENT_PROFILE profile"
+
+if [ "$SCREEN_CURRENT_PROFILE" == "docked-1" ]; then
+  bspc monitor DP-1-4 -d 1 2 3 4 5
+elif [ "$SCREEN_CURRENT_PROFILE" == "docked-2" ]; then
+  bspc monitor DP-1-4 -d 1 2 3 4 5
+  bspc monitor DP-1-3 -d 1 2 3 4 5
+elif [ "$SCREEN_CURRENT_PROFILE" == "docked-3" ]; then
+  bspc monitor DP-1-4 -d 1 2 3 4 5
+  bspc monitor DP-1-3 -d 1 2 3 4 5
+  bspc monitor eDP-1 -d 1 2 3 4 5
+elif [ "$SCREEN_CURRENT_PROFILE" == "docked-4" ]; then
+  bspc monitor DP-1-4 -d 1 2 3 4 5
+  bspc monitor eDP-1 -d 1 2 3 4 5
+else
+  bspc monitor eDP-1 -d 1 2 3 4 5
+fi
+
+bspc config remove_disabled_monitors true
+bspc config remove_unplugged_monitors true
+
+bspc config window_gap 5
+
+bspc config split_ratio 0.50
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+bspc config pointer_follows_focus false
+bspc config focus_follows_pointer false
+
+###################
+### BSPWM rules ###
+###################
+
+#bspc rule -a Chromium desktop='^2'
+#bspc rule -a Microsoft-edge desktop='^2'
+#bspc rule -a Code desktop='^4'
+bspc rule -a Screenkey manage=off
+# launch telegram in floating mode
+bspc rule -a TelegramDesktop state=floating floating=on
+# launch whatsapp nativifier in floating mode
+bspc rule -a whatsapp-nativefier-d40211 state=floating floating=on
+# launch network manager applet in floating mode
+bspc rule -a Nm-connection-editor state=floating floating=on
+# launch feh in floating mode
+bspc rule -a feh state=floating floating=on
+# launch sound settings in floating mode
+bspc rule -a Pavucontrol state=floating floating=on
+# screenshot preview in floating mode
+bspc rule -a Viewnior state=floating floating=on
+
+######################
+### BSPWM coloring ###
+######################
+bspc config presel_feedback_color "#689992"
+bspc config normal_border_color "#575268"
+bspc config active_border_color "#decec8"
+bspc config border_width 0
+
+# autostart scripts
+$HOME/.config/bspwm/autostart

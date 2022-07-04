@@ -2,4 +2,4 @@
 
 SCREEN_CURRENT_PROFILE=$(cat $HOME/.current-layout)
 # reload bspwm and send notification
-$HOME/.config/bspwm/bspwmrc > /dev/null 2>&1 && notify-send -i display "Screen" "Switched to $SCREEN_CURRENT_PROFILE profile"
+$HOME/.config/bspwm/bspwmrc > /dev/null 2>&1 && notify-send "Screen" "Switched to $SCREEN_CURRENT_PROFILE profile"

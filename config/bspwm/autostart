@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Enable shortcuts
+pgrep -x sxhkd >/dev/null || sxhkd &
+# Monitor
+#~/.screenlayout/monitor.sh & # disabled due to above script taking care
+# Bar
+$HOME/.config/polybar/launch &
+# Notifications
+if [[ ! $(pidof dunst) ]]; then
+  /usr/bin/dunst &
+fi
+# Polkit
+if [[ ! $(pidof polkit-gnome-authentication-agent-1) ]]; then
+  /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+fi
+# Wallpaper, doesn't matter if already running, refresh will be called, output error messages to dev/null
+nitrogen --restore &> /dev/null &
+# Dex (auto start programs)
+dex -a -s /etc/xdg/autostart/:~/.config/autostart/
+# Picom compositor
+if [[ ! $(pidof picom) ]]; then
+picom --experimental-backend -b &
+fi
+# Network Applet
+if [[ ! $(pidof nm-applet) ]]; then
+  nm-applet --indicator &
+fi
+# Cursor
+xsetroot -cursor_name left_ptr &
+# Automount devices
+if [[ ! $(pidof udisksd) ]]; then
+  udiskie --tray &
+fi
+# Low battery notifier
+$HOME/Code/dotfiles/scripts/low_bat_notifier &
